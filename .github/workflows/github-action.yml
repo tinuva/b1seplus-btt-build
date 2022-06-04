@@ -1,0 +1,42 @@
+# This a Github Action for automatically building Marlin Firmware when you push a commit to master.
+
+name: Build Marlin Firmware
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'Firmware/Configuration/**.h'
+
+jobs:
+  build_and_push:
+    name: Build and push firmware
+    runs-on: ubuntu-latest
+    env:
+      #BOARD: BIGTREE_SKR_2
+      BOARD: BIGTREE_SKR_2_usb_flash_drive
+      USE_REPO: https://github.com/tinuva/B1-SE-SKR2
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Compile firmware
+        run: |
+          docker run \
+            -u root:root \
+            -e BOARD \
+            -e USE_REPO \
+            -v $(pwd)/Firmware/Builds:/home/platformio/build \
+            -v $(pwd)/Firmware/Configuration:/home/platformio/CustomConfiguration \
+             ghcr.io/tinuva/b1seplus-marlin-build:master
+#             frealmyr/marlin-build:latest
+
+      - name: Push firmware
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Compiled firmware"
+          git push

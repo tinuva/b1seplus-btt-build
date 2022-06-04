@@ -1,0 +1,10 @@
+# OS
+applet/
+*.DS_Store
+
+# IDEs
+.idea
+.vscode
+
+# Repo
+.env
