@@ -31,7 +31,7 @@ The file was extracted and the git files updated to upload to [tinuva/B1-SE-SKR2
 [commits-shield]: https://img.shields.io/github/commit-activity/y/tinuva/b1seplus-btt-build.svg
 [commits]: https://github.com/tinuva/b1seplus-btt-build/commits/master
 [contributors]: https://github.com/tinuva/b1seplus-btt-build/graphs/contributors
-[actions-shield]: https://github.com/tinuva/b1seplus-btt-build/workflows/Home%20Assistant%20CI/badge.svg
+[actions-shield]: https://github.com/tinuva/b1seplus-btt-build/workflows/Build%20Marlin%20Firmware/badge.svg
 [actions]: https://github.com/tinuva/b1seplus-btt-build/actions
 [issue]: https://github.com/tinuva/b1seplus-btt-build/issues
 [license-shield]: https://img.shields.io/github/license/tinuva/b1seplus-btt-build.svg
