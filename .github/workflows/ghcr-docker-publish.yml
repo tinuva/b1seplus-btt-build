@@ -3,7 +3,7 @@ name: GHCR Publish Docker image
 on:
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - 'README.md'
       - '.gitignore'
